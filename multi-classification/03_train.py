@@ -58,8 +58,8 @@ args = vars(ap.parse_args())
 
 LEARNING_RATE = 0.001
 EPOCHS = args['epochs']
-BATCH_SIZE =32
-INPUT_SHAPE = (110, 110, 3)
+BATCH_SIZE =10
+INPUT_SHAPE = (250, 250, 3)
 
 
 print('[INFO] Wczytywanie danych...')
