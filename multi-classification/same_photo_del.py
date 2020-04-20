@@ -1,7 +1,7 @@
 from PIL import  Image
 
-imageObject = Image.open('./image-dataset/opel_insignia/0000.jpg')
+imageObject = Image.open('./image-dataset/opel_insignia/0003.jpg')
 
-cropped = imageObject.crop((50,20,300,300))
+cropped = imageObject.crop((90,70,320,260))
 
 cropped.show()
