@@ -58,8 +58,8 @@ args = vars(ap.parse_args())
 
 LEARNING_RATE = 0.001
 EPOCHS = args['epochs']
-BATCH_SIZE =10
-INPUT_SHAPE = (250, 250, 3)
+BATCH_SIZE =32
+INPUT_SHAPE = (150, 150, 3)
 
 
 print('[INFO] Wczytywanie danych...')
@@ -78,10 +78,10 @@ for image_path in image_paths:
     label = image_path.split('\\')[-2].split('_')
     labels.append(label)
 
-data = np.array(data, dtype='float')/ 255.
+data = np.array(data, dtype='float') / 255.
 labels = np.array(labels)
 
-print(f'[INFO] {len(image_paths)} obrazów o rozmiarz: {data.nbytes / (400 *400.0):.2f} MB')
+print(f'[INFO] {len(image_paths)} obrazów o rozmiarz: {data.nbytes / (1024 *1000.0):.2f} MB')
 print(f'[INFO] Kształt danych: {data.shape}')
 
 print(f'[INFO] Binaryzacja etykiet...')
@@ -116,8 +116,8 @@ model = architecture.build()
 model.summary()
 
 model.compile(optimizer=Adam(learning_rate=LEARNING_RATE),
-    loss='binary_crossentropy',
-    metrics=['accuracy'])
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
 
 dt = datetime.now().strftime('%d_%m_%Y_%H_%M')
 filepath = os.path.join('output', 'model_' + dt + '.hdf5')

@@ -4,9 +4,9 @@ import cv2
 import imutils
 
 
-BASE_IMG = os.path.join(os.getcwd(), 'image-dataset')
+BASE_IMG = os.path.join(os.getcwd(), 'downloads')
 
-dir_paths = [os.path.join('image-dataset', dir) for dir in os.listdir(BASE_IMG)]
+dir_paths = [os.path.join('downloads', dir) for dir in os.listdir(BASE_IMG)]
 for dir_path in dir_paths:
     os.rename(dir_path, dir_path.replace(' ', '_'))
 

@@ -6,16 +6,18 @@ import numpy as np
 execution_path = os.getcwd()
 base_dir = os.path.join(execution_path, 'image-dataset')
 
-CLS_1 = 'horse'
-CLS_2 = 'lion'
+CLS_1 = 'lion'
+CLS_2 = 'horse'
+
 classes = [CLS_1, CLS_2]
 
 
 execution_path = os.getcwd()
 base_dir = os.path.join(execution_path, 'image-dataset')
 # print(base_dir)
-CLS_1 = 'horse'
-CLS_2 = 'lion'
+CLS_1 = 'lion'
+CLS_2 = 'horse'
+
 TRAIN_RATIO = 0.7
 VALID_RATIO = 0.2
 DATA_DIR = r'./images'
@@ -39,6 +41,7 @@ test_cls_1_dir = os.path.join(test_dir, CLS_1)
 train_cls_2_dir = os.path.join(train_dir, CLS_2)
 valid_cls_2_dir = os.path.join(valid_dir, CLS_2)
 test_cls_2_dir = os.path.join(test_dir, CLS_2)
+
 #
 for dir in (train_dir, valid_dir, test_dir):
     if not os.path.exists(dir):
@@ -55,6 +58,7 @@ for dir in (train_cls_2_dir, valid_cls_2_dir, test_cls_2_dir):
 print('[INFO] Wczytanie nazw plikow...')
 cls_1_names = os.listdir(os.path.join(base_dir, CLS_1))
 cls_2_names = os.listdir(os.path.join(base_dir, CLS_2))
+
 
 print('[INFO] Walidacja poprawnosci nazw...')
 cls_1_names = [fname for fname in cls_1_names if fname.split('.')[1].lower() in ['jpg', 'png', 'jpeg']]
